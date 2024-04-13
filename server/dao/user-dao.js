@@ -58,7 +58,7 @@ async function update(user) {
   }
 }
 
-/*
+
 function remove(user_id) {
   //WORKING - potřeba upravit aby se smazalo vše co udělal např: kategorie/úkoly
   try {
@@ -74,7 +74,7 @@ function remove(user_id) {
   }
 }
 
-
+/*
 async function comparePasswords(plainPassword, hashedPassword) {
   try {
     // Compare the provided password with the hashed password
@@ -115,7 +115,7 @@ module.exports = {
   get,
   create,
   update,
-  //remove,
+  remove,
   list,
   checkUserExistence,
 };
