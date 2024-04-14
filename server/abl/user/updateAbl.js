@@ -23,7 +23,6 @@ async function UpdateAbl(req, res) {
   try {
     let user = req.body;
 
-    // validate input
     const valid = ajv.validate(schema, user);
     if (!valid) {
       res.status(400).json({

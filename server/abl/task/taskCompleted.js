@@ -16,7 +16,6 @@ async function completeAbl(req, res) {
   try {
     const reqParam = req.query?.id ? req.query : req.body;
 
-    // validate input
     const valid = ajv.validate(schema, reqParam);
     if (!valid) {
       res.status(400).json({

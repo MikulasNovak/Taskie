@@ -17,7 +17,6 @@ function get(user_id) {
   }
 }
 
-// Function to hash a password
 async function hashPassword(password) {
   try {
     const saltRounds = 10; // Number of salt rounds (higher is more secure but slower)
@@ -60,7 +59,6 @@ async function update(user) {
 
 
 function remove(user_id) {
-  //WORKING - potřeba upravit aby se smazalo vše co udělal např: kategorie/úkoly
   try {
     const filePath = path.join(userFolderPath, `${user_id}.json`);
     fs.unlinkSync(filePath);
@@ -74,19 +72,6 @@ function remove(user_id) {
   }
 }
 
-/*
-async function comparePasswords(plainPassword, hashedPassword) {
-  try {
-    // Compare the provided password with the hashed password
-    const match = await bcrypt.compare(plainPassword, hashedPassword);
-    return match;
-  } catch (error) {
-    console.error("Error comparing passwords:", error);
-    throw error;
-  }
-}
-
-*/
 
 function list() {
   try {
@@ -110,6 +95,22 @@ function checkUserExistence(user) {
   );
   return userExists;
 }
+
+
+/*
+async function comparePasswords(plainPassword, hashedPassword) {
+  try {
+    // Compare the provided password with the hashed password
+    const match = await bcrypt.compare(plainPassword, hashedPassword);
+    return match;
+  } catch (error) {
+    console.error("Error comparing passwords:", error);
+    throw error;
+  }
+}
+*/
+
+
 
 module.exports = {
   get,

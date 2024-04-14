@@ -19,8 +19,6 @@ async function createAbl(req, res) {
   try {
     let category = req.body;
 
-    // validate input
-
     const valid = ajv.validate(schema, category);
     if (!valid) {
       res.status(400).json({

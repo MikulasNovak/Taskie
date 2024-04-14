@@ -13,10 +13,8 @@ const schema = {
 
 async function deleteAbl(req, res) {
   try {
-    // get request query or body
     const reqParam = req.body;
 
-    // validate input
     const valid = ajv.validate(schema, reqParam);
     if (!valid) {
       res.status(400).json({

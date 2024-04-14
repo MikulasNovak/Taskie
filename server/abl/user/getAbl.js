@@ -13,10 +13,8 @@ const schema = {
 
 async function GetAbl(req, res) {
   try {
-    // get request query or body
     const reqParams = req.query?.id ? req.query : req.body;
 
-    // validate input
     const valid = ajv.validate(schema, reqParams);
     if (!valid) {
       res.status(400).json({
@@ -27,7 +25,6 @@ async function GetAbl(req, res) {
       return;
     }
 
-    // read user by given id
     const user = userDao.get(reqParams.id);
     if (!user) {
       res.status(404).json({
