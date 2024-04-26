@@ -129,6 +129,34 @@ header>nav {
   padding: 0.8rem 1.4rem 0.8rem 1.4rem;
 }
 
+
+
+.task-create-form>div>input {
+  background-color: #292929;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  padding: 0.8rem 0 0.8rem 0.8rem;
+  font-weight: bold;
+}
+
+.task-create-form>div:nth-child(1) {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.task-create-form-priority {
+  display: flex;
+}
+
+.task-create-form>div>textarea {
+  background-color: #292929;
+  border: none;
+  color: white;
+}
+
+
 /*-----------------*/
 
 

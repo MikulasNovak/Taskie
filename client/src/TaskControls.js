@@ -40,25 +40,44 @@ function TaskControls() {
       </div>
 
       <Modal isOpen={isModalOpen} closeModal={closeModal}>
-        <form onSubmit={handleSubmit}>
-          <input type="text" id="title" name="title" />
-          <input type="date" id="date-time" name="date-time" />
-          <textarea id="description" name="description" />
-          <CategorySelectProvider>
-            <CategorySelect />
-          </CategorySelectProvider>
+        <form onSubmit={handleSubmit} className="task-create-form">
           <div>
-            <input
-              type="radio"
-              id="priority"
-              name="priority"
-              value="high"
-            ></input>
+            <input type="text" id="title" name="title" placeholder="Title" />
+            <CategorySelectProvider>
+              <CategorySelect />
+            </CategorySelectProvider>
+            <input type="date" id="date-time" name="date-time" />
+            <div className="task-create-form-priority">
+              <input
+                type="radio"
+                id="priority"
+                name="priority"
+                value="high"
+              ></input>
+              <input
+                type="radio"
+                id="priority"
+                name="priority"
+                value="medium"
+              ></input>
+              <input
+                type="radio"
+                id="priority"
+                name="priority"
+                value="low"
+              ></input>
+            </div>
+
           </div>
-          <button type="submit" variant="primary">
-            Save
-          </button>
-          <button onClick={closeModal}>Close</button>
+          <div>
+            <textarea id="description" name="description" placeholder="Description" />
+          </div>
+          <div>
+            <button onClick={closeModal}>Close</button>
+            <button type="submit" variant="primary">
+              Save
+            </button>
+          </div>
         </form>
       </Modal>
 
