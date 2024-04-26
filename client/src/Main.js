@@ -1,7 +1,9 @@
 import TaskList from "./TaskList";
 import TaskListProvider from "./TaskListProvider";
+import TaskProvider from "./TaskProvider";
 import CategorySelectProvider from "./CategorySelectProvider";
 import CategorySelect from "./CategorySelect";
+import TaskControls from "./TaskControls";
 
 function Main() {
   return (
@@ -12,11 +14,9 @@ function Main() {
         </CategorySelectProvider>
       </section>
       <section>
-        <div className="task-controls">
-          <div>Add task</div>
-          <div>Add task</div>
-          <div>Add task</div>
-        </div>
+        <TaskProvider>
+          <TaskControls />
+        </TaskProvider>
       </section>
       <section>
         <TaskListProvider>

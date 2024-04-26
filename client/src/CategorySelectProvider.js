@@ -1,9 +1,9 @@
-// CategoryListProvider.js
+// CategorySelectProvider.js
 import React, { createContext, useEffect, useState } from "react";
 
 export const CategoryListContext = createContext();
 
-function CategoryListProvider({ children }) {
+function CategorySelectProvider({ children }) {
   const [CategoryLoadObject, setCategoryLoadObject] = useState({
     state: "ready",
     error: null,
@@ -40,4 +40,4 @@ function CategoryListProvider({ children }) {
   );
 }
 
-export default CategoryListProvider;
+export default CategorySelectProvider;

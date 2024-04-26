@@ -2,14 +2,14 @@
 import React, { useContext } from "react";
 import { CategoryListContext } from "./CategorySelectProvider";
 
-function CategoryList() {
+function CategorySelect() {
   const { categories } = useContext(CategoryListContext);
-  
+
   return (
     <div className="category-select">
-      <select name="categories" id="categories">
+      <select name="category" id="category">
         {categories.map((category) => (
-          <option key={category.id} value={category.title}>
+          <option key={category.id} value={category.id}>
             {category.title}
           </option>
         ))}
@@ -18,4 +18,4 @@ function CategoryList() {
   );
 }
 
-export default CategoryList;
+export default CategorySelect;
