@@ -11,7 +11,10 @@ const schema = {
     id: { type: "string" },
     title: { type: "string" },
     description: { type: "string" },
-    date: { type: "string" }
+    date: { type: "string" },
+    category_id: { type: "string" },
+    priority: { type: "string" },
+    completed: { type: "boolean" },
   },
   required: ["id"],
   additionalProperties: false,

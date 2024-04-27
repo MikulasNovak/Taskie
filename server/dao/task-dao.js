@@ -21,6 +21,7 @@ function create(task) {
     const filePath = path.join(taskFolderPath, `${task.id}.json`);
     const fileData = JSON.stringify(task);
     fs.writeFileSync(filePath, fileData, "utf8");
+    return task;
   } catch (error) {
     throw { code: "failedToCreateTask", message: error.message };
   }

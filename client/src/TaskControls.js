@@ -7,9 +7,12 @@ import { useCallback } from "react";
 
 function TaskControls() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { state, handlerMap } = useContext(TaskContext);
+
+  const { handlerMap } = useContext(TaskContext);
+
   const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+
+  const closeModal = useCallback(() => setIsModalOpen(false), [setIsModalOpen]);
 
   const handleSubmit = useCallback(
     async (event) => {
@@ -67,10 +70,13 @@ function TaskControls() {
                 value="low"
               ></input>
             </div>
-
           </div>
           <div>
-            <textarea id="description" name="description" placeholder="Description" />
+            <textarea
+              id="description"
+              name="description"
+              placeholder="Description"
+            />
           </div>
           <div>
             <button onClick={closeModal}>Close</button>
@@ -86,4 +92,5 @@ function TaskControls() {
     </div>
   );
 }
+
 export default TaskControls;

@@ -21,6 +21,7 @@ function create(category) {
     category.id = crypto.randomBytes(16).toString("hex"); // ID GENERATION
     const filePath = path.join(categoryFolderPath, `${category.id}.json`);
     const fileData = JSON.stringify(category);
+    return category;
     fs.writeFileSync(filePath, fileData, "utf8");
   } catch (error) {
     throw { code: "failedToCreatecategory", message: error.message };

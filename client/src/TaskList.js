@@ -1,10 +1,10 @@
 // TaskList.js
 import React, { useContext } from "react";
-import { TaskListContext } from "./TaskListProvider";
+import { TaskContext } from "./TaskProvider";
 import TaskCard from "./TaskCard";
 
 function TaskList() {
-  const { tasks } = useContext(TaskListContext);
+  const { tasks } = useContext(TaskContext);
 
   return (
     <div className="task-list">
