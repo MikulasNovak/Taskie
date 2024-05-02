@@ -13,7 +13,7 @@ router.get("/get", (req, res) => {
   getAbl(req, res);
 });
 
-router.get("/list/all", (req, res) => {
+router.get("/list", (req, res) => {
   listAbl(req, res);
 });
 

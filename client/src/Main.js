@@ -1,25 +1,26 @@
-import TaskList from "./TaskList";
-import TaskProvider from "./TaskProvider";
-import CategorySelectProvider from "./CategorySelectProvider";
-import CategorySelect from "./CategorySelect";
-import TaskControls from "./TaskControls";
+import TaskList from "./Task/TaskList";
+import TaskProvider from "./Task/TaskProvider";
+import CategoryProvider from "./Category/CategoryProvider";
+//import CategorySelect from "./Category/CategorySelect";
+import CategorySelectFilter from "./Category/CategorySelectFilter";
+import TaskControls from "./Task/TaskControls";
 
 function Main() {
   return (
     <TaskProvider>
-      <main>
-        <section>
-          <CategorySelectProvider>
-            <CategorySelect />
-          </CategorySelectProvider>
-        </section>
-        <section>
-          <TaskControls />
-        </section>
-        <section>
-          <TaskList />
-        </section>
-      </main>
+      <CategoryProvider>
+        <main>
+          <section>
+            <CategorySelectFilter />
+          </section>
+          <section>
+            <TaskControls />
+          </section>
+          <section>
+            <TaskList />
+          </section>
+        </main>
+      </CategoryProvider>
     </TaskProvider>
   );
 }

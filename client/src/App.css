@@ -10,7 +10,6 @@ html {
   color: white;
 }
 
-
 /*---HEADER---*/
 header {
   background-color: #242424;
@@ -25,22 +24,24 @@ header>nav {
   margin: 0 auto;
 }
 
+header>nav h1 {
+  cursor: pointer;
+}
+
 /*-----------------------------------*/
-
 /*---MAIN---*/
-
-
-
 
 /*TASK-CARD*/
 .task-card {
-  background-color: #242424;
+  /*background-color: #242424;*/
+  background-color: var(--complete-color, transparent);
   width: 75%;
   height: 5rem;
   margin: 0 auto;
   display: flex;
   border-radius: 20px;
   margin-top: 1vh;
+  cursor: pointer;
 }
 
 .task-card>div {
@@ -83,9 +84,13 @@ header>nav {
 }
 
 /*TASK-CARD-ICONS*/
-.task-card>div:nth-child(2)>div {
+.task-card-buttons>div {
   width: fit-content;
   height: fit-content;
+}
+
+.task-card-buttons>div {
+  cursor: pointer;
 }
 
 .task-card-trashIco {
@@ -105,8 +110,6 @@ header>nav {
 
 /*----*/
 /*-----------------*/
-
-
 /*TASK-CONTROLS*/
 .task-controls {
   display: grid;
@@ -120,52 +123,24 @@ header>nav {
 }
 
 .task-control-button {
-  background-color: #39753E;
+  background-color: #242424;
   border-radius: 10px;
   display: flex;
   align-items: center;
   font-weight: 700;
   justify-content: center;
   padding: 0.8rem 1.4rem 0.8rem 1.4rem;
+  cursor: pointer;
 }
 
-
-
-.task-create-form>div>input {
-  background-color: #292929;
-  color: white;
-  border: none;
-  font-size: 1rem;
-  padding: 0.8rem 0 0.8rem 0.8rem;
-  font-weight: bold;
+.task-control-button:nth-child(3) {
+  background-color: #39753E;
 }
-
-.task-create-form>div:nth-child(1) {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.task-create-form-priority {
-  display: flex;
-}
-
-.task-create-form>div>textarea {
-  background-color: #292929;
-  border: none;
-  min-width: 100%;
-  color: white;
-}
-
 
 /*-----------------*/
-
-
 /*TASK-CATEGORY*/
 .category-select {
-  width: 80%;
-  margin: 0 auto;
-  margin-top: 2vh;
+  width: fit-content;
 }
 
 .category-select>select {
@@ -180,9 +155,6 @@ header>nav {
 }
 
 /*-----------------*/
-
-
-
 /*-----------------------------------*/
 
 
@@ -212,14 +184,140 @@ header>nav {
 }
 
 
+/*---TASK-CREATE/EDIT/DETAIL---*/
+
+
+.task-form input {
+  background-color: #292929;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem 1.4rem 0.8rem 1.4rem;
+}
+
+.task-form>div:nth-child(1) {
+  display: grid;
+  display: flex;
+  grid-template-columns: auto;
+  grid-gap: 1vw;
+}
+
+.task-form>div:nth-child(2) {
+  margin-top: 2vh;
+}
+
+.task-form>div:nth-child(3) {
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 1vw;
+  display: flex;
+  margin-top: 2vh;
+  justify-content: flex-end;
+
+}
+
+.task-form select {
+  background-color: #292929;
+  border-radius: 10px;
+  font-size: 0.8rem;
+}
+
+.task-form>div:nth-child(3)>button {
+  padding: 0.8rem 1.4rem 0.8rem 1.4rem;
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.task-form>div:nth-child(3)>button:nth-child(1) {
+  background-color: #AB363B;
+}
+
+.task-form>div:nth-child(3)>button:nth-child(2) {
+  background-color: #39753E;
+}
+
+.task-form-priority {
+  display: grid;
+  grid-template-columns: auto;
+  display: flex;
+  grid-gap: 0.5vw;
+}
+
+.task-form-priority input[type="radio"] {
+  appearance: none;
+  border-radius: 0.25rem;
+  height: 2.4rem;
+  cursor: pointer;
+}
+
+.task-form-priority input[type="radio"]:checked {
+  opacity: 0.5;
+}
+
+.task-form-priority input[value="high"] {
+  background-color: #AB363B;
+}
+
+.task-form-priority input[value="medium"] {
+  background-color: #A86320;
+}
+
+
+.task-form-priority input[value="low"] {
+  background-color: #39753E;
+}
+
+.task-form>div>textarea {
+  resize: none;
+  width: 100%;
+  background-color: #292929;
+  border: none;
+  color: white;
+  height: 15vh;
+}
+
 /*-----------------*/
 
 
+/*---TASK-DELETE---*/
+.task-delete-form button {
+  padding: 0.8rem 1.4rem 0.8rem 1.4rem;
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.task-delete-form p{
+  font-size: 1rem;
+  font-weight: bold;
+}
+.task-delete-form>div {
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 1vw;
+  display: flex;
+  margin-top: 2vh;
+  justify-content: flex-end;
+
+}
+
+.task-delete-form-cancel {
+  background-color: #AB363B;
+}
+
+.task-delete-form-submit {
+  background-color: #39753E;
+}
 
 
-
-
-
+/*-----------------*/
+/*-----------------------------------*/
 
 
 

@@ -1,6 +1,6 @@
 // CategoryList.js
 import React, { useContext } from "react";
-import { CategoryListContext } from "./CategorySelectProvider";
+import { CategoryListContext } from "./CategoryProvider";
 
 function CategorySelect() {
   const { categories } = useContext(CategoryListContext);
