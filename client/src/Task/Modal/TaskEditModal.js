@@ -14,6 +14,7 @@ function TaskEditModal({ isModalOpen, closeModal, handleSubmit, taskValues }) {
               name="title"
               placeholder="Title"
               defaultValue={taskValues.title}
+              required
             />
           </div>
           <CategoryProvider>
@@ -25,6 +26,7 @@ function TaskEditModal({ isModalOpen, closeModal, handleSubmit, taskValues }) {
               id="date-time"
               name="date-time"
               defaultValue={taskValues.date}
+              required
             />
           </div>
           <div className="task-form-priority">
@@ -34,6 +36,7 @@ function TaskEditModal({ isModalOpen, closeModal, handleSubmit, taskValues }) {
               name="priority"
               value="high"
               defaultChecked={taskValues.priority === "high"}
+              required
             ></input>
             <input
               type="radio"
@@ -41,6 +44,7 @@ function TaskEditModal({ isModalOpen, closeModal, handleSubmit, taskValues }) {
               name="priority"
               value="medium"
               defaultChecked={taskValues.priority === "medium"}
+              required
             ></input>
             <input
               type="radio"
@@ -48,6 +52,7 @@ function TaskEditModal({ isModalOpen, closeModal, handleSubmit, taskValues }) {
               name="priority"
               value="low"
               defaultChecked={taskValues.priority === "low"}
+              required
             ></input>
           </div>
         </div>
@@ -58,6 +63,7 @@ function TaskEditModal({ isModalOpen, closeModal, handleSubmit, taskValues }) {
             name="description"
             placeholder="Description"
             defaultValue={taskValues.description}
+            required
           />
         </div>
 

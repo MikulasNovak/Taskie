@@ -8,13 +8,15 @@ function CategorySelect() {
   const { handlerMap } = useContext(TaskContext);
 
   return (
-    <div className="category-select">
+    <div className="category-select-filter">
       <select
         name="category"
         id="category"
         onChange={(e) => handlerMap.setFilters({ category_id: e.target.value })}
       >
-        <option key="" value="">All</option>
+        <option key="" value="">
+          All
+        </option>
         {categories.map((category) => (
           <option key={category.id} value={category.id}>
             {category.title}

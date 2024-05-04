@@ -2,19 +2,25 @@ import Modal from "../../Modal"; // Import the Modal component
 import CategoryProvider from "../../Category/CategoryProvider";
 import CategorySelect from "../../Category/CategorySelect";
 
-function TaskCreateModal({ isModalOpen, closeModal, handleSubmit}) {
+function TaskCreateModal({ isModalOpen, closeModal, handleSubmit }) {
   return (
     <Modal isOpen={isModalOpen} closeModal={closeModal}>
       <form onSubmit={handleSubmit} className="task-form">
         <div>
           <div>
-            <input type="text" id="title" name="title" placeholder="Title" />
+            <input
+              type="text"
+              id="title"
+              name="title"
+              placeholder="Title"
+              required
+            />
           </div>
           <CategoryProvider>
             <CategorySelect />
           </CategoryProvider>
           <div>
-            <input type="date" id="date-time" name="date-time" />
+            <input type="date" id="date-time" name="date-time" required />
           </div>
           <div className="task-form-priority">
             <input
@@ -22,18 +28,21 @@ function TaskCreateModal({ isModalOpen, closeModal, handleSubmit}) {
               id="priority"
               name="priority"
               value="high"
+              required
             ></input>
             <input
               type="radio"
               id="priority"
               name="priority"
               value="medium"
+              required
             ></input>
             <input
               type="radio"
               id="priority"
               name="priority"
               value="low"
+              required
             ></input>
           </div>
         </div>
@@ -43,6 +52,7 @@ function TaskCreateModal({ isModalOpen, closeModal, handleSubmit}) {
             id="description"
             name="description"
             placeholder="Description"
+            required
           />
         </div>
 

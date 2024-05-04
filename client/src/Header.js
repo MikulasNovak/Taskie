@@ -3,7 +3,7 @@ function Header() {
     <header>
       <nav>
         <div>
-          <h1>Logo</h1>
+          <h1>Taskie</h1>
         </div>
         <div>
             <p>user</p>
