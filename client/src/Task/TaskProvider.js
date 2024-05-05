@@ -17,22 +17,6 @@ function TaskProvider({ children }) {
     handleLoad();
   }, [filters]);
 
-  /*
-  async function handleLoad() {
-    setTaskLoadObject((current) => ({ ...current, state: "pending" }));
-    try {
-      const response = await fetch("http://localhost:8000/task/list");
-      if (!response.ok) {
-        throw new Error("Failed to fetch tasks");
-      }
-      const tasks = await response.json();
-      setTaskLoadObject({ state: "ready", data: tasks });
-    } catch (error) {
-      setTaskLoadObject({ state: "error", error: error.message });
-    }
-  }
-*/
-
   function handleLoad() {
     setTaskLoadObject((current) => ({ ...current, state: "pending" }));
     fetch(`http://localhost:8000/task/list?${new URLSearchParams(filters)}`, {
