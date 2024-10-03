@@ -17,6 +17,9 @@ function TaskProvider({ children }) {
     handleLoad();
   }, [filters]);
 
+
+  
+  
   function handleLoad() {
     setTaskLoadObject((current) => ({ ...current, state: "pending" }));
     fetch(`http://localhost:8000/task/list?${new URLSearchParams(filters)}`, {
